@@ -74,6 +74,10 @@
     <Compile Include="EntityFramework\EfResourceDAL.cs" />
     <Compile Include="EntityFramework\EfStudentCourseAssignmentDAL.cs" />
     <Compile Include="EntityFramework\EfUserDAL.cs" />
+    <Compile Include="Migrations\202309232000215_DatabaseUpdate.cs" />
+    <Compile Include="Migrations\202309232000215_DatabaseUpdate.designer.cs">
+      <DependentUpon>202309232000215_DatabaseUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -83,7 +87,11 @@
       <Name>EntityLayer</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202309232000215_DatabaseUpdate.resx">
+      <DependentUpon>202309232000215_DatabaseUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

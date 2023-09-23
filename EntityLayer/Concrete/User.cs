@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class User
+    public class User : BaseEntity
     {
+        public User()
+        {
+            isDeleted = false;
+            isActive = true;
+            creationTime = DateTime.Now;
+        }
+
         [Key] // Primary Key
         public int UserID { get; set; }
 

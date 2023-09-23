@@ -8,8 +8,15 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class Question
+    public class Question : BaseEntity
     {
+        public Question()
+        {
+            isDeleted = false;
+            isActive = true;
+            creationTime = DateTime.Now;
+        }
+
         [Key] // Primary Key
         public int QuestionID { get; set; }
 

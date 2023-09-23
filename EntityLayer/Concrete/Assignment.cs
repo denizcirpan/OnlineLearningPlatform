@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class Assignment
+    public class Assignment : BaseEntity
     {
+        public Assignment()
+        {
+            isActive = true;
+            isDeleted = false;
+            creationTime = DateTime.Now;
+        }
+
         [Key]
         public int assignmentId { get; set; }
         public int CourseID { get; set; }

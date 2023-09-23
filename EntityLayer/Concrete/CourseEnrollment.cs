@@ -8,8 +8,15 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class CourseEnrollment
+    public class CourseEnrollment : BaseEntity
     {
+        public CourseEnrollment()
+        {
+            isDeleted = false;
+            isActive = true;
+            creationTime = DateTime.Now;
+        }
+
         [Key] // Primary Key
         public int CourseEnrollmentID { get; set; }
 
