@@ -24,27 +24,34 @@ namespace BusinessLayer.Concrete
 
         public void AssignmentChangeStatus(Assignment assignment)
         {
-            throw new NotImplementedException();
+            if (assignment.isActive == true)
+            {
+                assignment.isActive = false;
+            }
+            else if (assignment.isActive == false)
+            {
+                assignment.isActive = true;
+            }
         }
 
         public void AssignmentDelete(Assignment assignment)
         {
-            throw new NotImplementedException();
+            _assignmentDAL.Delete(assignment);
         }
 
         public void AssignmentUpdate(Assignment assignment)
         {
-            throw new NotImplementedException();
+            _assignmentDAL.Update(assignment);
         }
 
         public Assignment GetByID(int id)
         {
-            throw new NotImplementedException();
+            return _assignmentDAL.Get(x => x.assignmentId == id);
         }
 
         public List<Assignment> GetList()
         {
-            throw new NotImplementedException();
+            return _assignmentDAL.List();
         }
     }
 }

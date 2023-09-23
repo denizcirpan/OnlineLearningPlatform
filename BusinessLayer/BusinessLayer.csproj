@@ -52,7 +52,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAssignmentService.cs" />
+    <Compile Include="Abstract\ICourseService.cs" />
     <Compile Include="Concrete\AssignmentManager.cs" />
+    <Compile Include="Concrete\CourseManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
