@@ -13,12 +13,6 @@ namespace EntityLayer.Concrete
         [Key] // Primary Key
         public int CourseAssignmentID { get; set; }
 
-        [ForeignKey("Assignment")] // Foreign Key
-        public int AssignmentID { get; set; }
-
-        [ForeignKey("Course")] // Foreign Key
-        public int CourseID { get; set; }
-
         [MaxLength(100)] // Max Length 100 karakter
         public string Title { get; set; }
 
@@ -27,7 +21,12 @@ namespace EntityLayer.Concrete
 
         public int OverallScore { get; set; }
 
-        public Assignment Assignment { get; set; }
-        public Course Course { get; set; }
+        [ForeignKey("Assignment")] // Foreign Key
+        public int AssignmentID { get; set; }
+        public virtual Assignment Assignment { get; set; }
+
+        [ForeignKey("Course")] // Foreign Key
+        public int CourseID { get; set; }
+        public virtual Course Course { get; set; }
     }
 }

@@ -13,10 +13,7 @@ namespace EntityLayer.Concrete
         [Key] // Primary Key
         public int LessonID { get; set; }
 
-        [ForeignKey("Resource")] // Foreign Key
-        public int ResourceID { get; set; }
-
-        public Resource Resource { get; set; }
+        public ICollection<Resource> Resources { get; set; }
         public ICollection<Question> Questions { get; set; }
     }
 }

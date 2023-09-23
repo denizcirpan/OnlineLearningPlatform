@@ -13,16 +13,15 @@ namespace EntityLayer.Concrete
         [Key] // Primary Key
         public int StudentCourseAssignmentID { get; set; }
 
-        [ForeignKey("Student")] // Foreign Key
-        public int StudentID { get; set; }
-
-        [ForeignKey("CourseAssignment")] // Foreign Key
-        public int AssignmentID { get; set; }
-
         public int Score { get; set; }
         public DateTime DueDate { get; set; }
 
-        public User Student { get; set; }
-        public CourseAssignment CourseAssignment { get; set; }
+        [ForeignKey("Student")] // Foreign Key
+        public int? StudentID { get; set; }
+        public virtual User Student { get; set; }
+
+        [ForeignKey("CourseAssignment")] // Foreign Key
+        public int AssignmentID { get; set; }
+        public virtual CourseAssignment CourseAssignment { get; set; }
     }
 }

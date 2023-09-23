@@ -13,12 +13,6 @@ namespace EntityLayer.Concrete
         [Key] // Primary Key
         public int CourseEnrollmentID { get; set; }
 
-        [ForeignKey("Student")] // Foreign Key
-        public int StudentID { get; set; }
-
-        [ForeignKey("Course")] // Foreign Key
-        public int CourseID { get; set; }
-
         [MaxLength(10)] // Max Length 10 karakter
         public string Grade { get; set; }
 
@@ -31,7 +25,13 @@ namespace EntityLayer.Concrete
         [MaxLength(200)] // Max Length 200 karakter
         public string Remark { get; set; }
 
-        public User Student { get; set; }
-        public Course Course { get; set; }
+
+        [ForeignKey("Student")] // Foreign Key
+        public int? StudentID { get; set; }
+        public virtual User Student { get; set; }
+
+        [ForeignKey("Course")] // Foreign Key
+        public int CourseID { get; set; }
+        public virtual Course Course { get; set; }
     }
 }

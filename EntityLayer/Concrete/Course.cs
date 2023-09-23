@@ -19,8 +19,6 @@ namespace EntityLayer.Concrete
         [MaxLength(500)] // Max Length 500 karakter
         public string Description { get; set; }
 
-        public int InstructorID { get; set; }
-
         [MaxLength(50)] // Max Length 50 karakter
         public string Category { get; set; }
 
@@ -30,7 +28,8 @@ namespace EntityLayer.Concrete
         public int OverallScore { get; set; }
 
         [ForeignKey("InstructorID")] // Foreign Key
-        public User Instructor { get; set; }
+        public virtual User Instructor { get; set; }
+        public int InstructorID { get; set; }
 
         public ICollection<CourseResource> CourseResources { get; set; }
         public ICollection<CourseAssignment> CourseAssignments { get; set; }

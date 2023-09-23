@@ -21,7 +21,6 @@ namespace EntityLayer.Concrete
 
         [ForeignKey("Lesson")] // Foreign Key
         public int LessonID { get; set; }
-
-        public Lesson Lesson { get; set; }
+        public virtual Lesson Lesson { get; set; }
     }
 }

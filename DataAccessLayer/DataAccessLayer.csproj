@@ -74,6 +74,7 @@
     <Compile Include="EntityFramework\EfResourceDAL.cs" />
     <Compile Include="EntityFramework\EfStudentCourseAssignmentDAL.cs" />
     <Compile Include="EntityFramework\EfUserDAL.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
